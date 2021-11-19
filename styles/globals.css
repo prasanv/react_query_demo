@@ -1,9 +1,8 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0px 5px;
+  margin: 0px 5px;
+  font-family: Segoe UI,Segoe WP,Tahoma,Arial,sans-serif;
 }
 
 a {
@@ -14,3 +13,4 @@ a {
 * {
   box-sizing: border-box;
 }
+
