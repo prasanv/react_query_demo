@@ -1,6 +1,5 @@
 {
   "name": "react_query_demo",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,19 +9,18 @@
     "serve-json": "json-server --watch db.json --port 4000"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.6.10",
-    "@emotion/react": "^11.5.0",
-    "@emotion/styled": "^11.3.0",
-    "framer-motion": "^4.1.17",
+    "@chakra-ui/react": "^1.7.1",
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
+    "framer-motion": "^5.3.0",
     "json-server": "^0.17.0",
-    "next": "11.1.2",
+    "next": "12.0.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-query": "^3.27.0",
-    "lint": "next lint"
+    "react-query": "^3.27.0"
   },
   "devDependencies": {
-    "eslint": "8.0.1",
-    "eslint-config-next": "11.1.2"
+    "eslint": "7.32.0",
+    "eslint-config-next": "12.0.4"
   }
 }

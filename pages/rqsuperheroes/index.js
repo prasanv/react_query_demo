@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 export default function rqsuperheroes() {
 
-  
+  const [refetchinterval, setRefetchinterval] = useState(true);
 
   const fetchRqsuperheros = async ()=> {
     const res = await fetch("http://localhost:4000/superheroes");
@@ -32,7 +32,7 @@ export default function rqsuperheroes() {
   const useQueryConfig = {
     onSuccess,
     onError,
-    refetchInterval,
+    refetchInterval: true,
     // enabled: false,
     // cacheTime: 50000,
     // staleTime: 0, 
