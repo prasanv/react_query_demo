@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "../styles/Home.module.css";
-import Link from "next/link";
+import React from 'react'
+import styles from '../styles/Home.module.css'
+import Link from 'next/link';
 
-export default function Navbar({ children }) {
+export default function Navbar({children}) {
   return (
     <div>
       <nav className={styles.navbar}>
@@ -58,20 +58,18 @@ export default function Navbar({ children }) {
         </ul>
         <ul>
           <li>
-            <Link href="/mutationsResponseData">
-              Add Query from Mutation Response Data{" "}
-            </Link>
+            <Link href="/mutationsResponseData">Add Query from Mutation Response Data </Link>
           </li>
         </ul>
         <ul>
           <li>
-            <Link href="/mutationsOptimisticUpdates">
-              Mutation Optimistic Updates
-            </Link>
+            <Link href="/mutationsOptimisticUpdates">Mutation Optimistic Updates</Link>
           </li>
         </ul>
       </nav>
-      <div className={styles.container}>{children}</div>
+      <div className={styles.container}>
+        {children}
+      </div>
     </div>
-  );
+  )
 }
