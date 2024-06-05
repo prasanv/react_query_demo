@@ -32,8 +32,9 @@ export default function rqsuperheroes() {
     // refetchOnWindowFocus: false,
   };
 
+  // NOTE: In order to generate error `http` => `https`
   const fetchRqsuperheros = async () => {
-    const res = await fetch("http://localhost:4000/superheroes");
+    const res = await fetch("https://localhost:4000/superheroes");
     const data = res.json();
     return data;
   };
@@ -44,7 +45,7 @@ export default function rqsuperheroes() {
     useQueryConfig
   );
 
-  // console.log({isLoading, isFetching});
+  console.log({ data, isLoading, isError, error, isFetching });
 
   if (isLoading || isFetching) {
     return <p>Loading...</p>;
