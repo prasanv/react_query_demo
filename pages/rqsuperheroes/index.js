@@ -1,41 +1,21 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useState } from "react";
-import { Button, Text } from "@chakra-ui/react";
+import React from "react";
+import { Text } from "@chakra-ui/react";
 import { useQuery } from "react-query";
 import axios from "axios";
 import Link from "next/link";
 
 export default function rqsuperheroes() {
-  const [refetchinterval, setRefetchinterval] = useState(false);
-
-  const onSuccess = (data) => {
-    console.log("Query was success = ", {data});
-    if (data.length > 3) {
-      setRefetchinterval(3000);
-    }
-  };
-
-  const onError = (error) => {
-    console.log("query has errored = ", {error});
-    if (error) {
-      setRefetchinterval(5000);
-    }
-  };
-
   const useQueryConfig = {
-    onSuccess,
-    onError,
-    // NOTE: `useQueryConfig.refetchInterval` used for polling data = `milliseconds | true | false`
-    refetchInterval: refetchinterval,
     // cacheTime: 5000,
-    // staleTime: 30000,
+    staleTime: 3000,
     // refetchOnMount: false,
     // refetchOnWindowFocus: false,
   };
 
   const fetchRqsuperheros = async () => {
     const res = await axios.get("http://localhost:4000/superheroes");
-    console.log({axiosRes: res});
+    console.log({ axiosRes: res });
     return res.data;
   };
 
@@ -60,9 +40,9 @@ export default function rqsuperheroes() {
     <div>
       <Text fontSize="3xl">RQSuperheroes Page</Text>
       {data &&
-        data?.map((ind) => (
-          <p key={ind.id}>
-            <Link href={`/rqsuperheroes/${ind.id}`}>{ind.name}</Link>
+        data?.map(({ id, name }) => (
+          <p key={id}>
+            <Link href={`/rqsuperheroes/${id}`}>{name}</Link>
           </p>
         ))}
     </div>
