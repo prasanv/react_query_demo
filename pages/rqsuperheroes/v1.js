@@ -4,8 +4,9 @@ import { Button, Text } from "@chakra-ui/react";
 import { useQuery } from "react-query";
 import axios from "axios";
 import Link from "next/link";
+import styles from "../../styles/Home.module.css";
 
-export default function rqsuperheroes() {
+export default function rqsuperheroesV1() {
   const [refetchinterval, setRefetchinterval] = useState(false);
 
   const onSuccess = (data) => {
@@ -26,7 +27,9 @@ export default function rqsuperheroes() {
     onSuccess,
     onError,
     // NOTE: `useQueryConfig.refetchInterval` used for polling data = `milliseconds | true | false`
-    refetchInterval: refetchinterval,
+    // refetchInterval: refetchinterval,
+    // NOTE: `useQueryConfig.enabled` used for disabling fetch on mount,
+    enabled: false, // fetch on mount
     // cacheTime: 5000,
     // staleTime: 30000,
     // refetchOnMount: false,
@@ -34,14 +37,14 @@ export default function rqsuperheroes() {
   };
 
   const fetchRqsuperheros = async () => {
-    const res = await axios.get("http://localhost:4000/superheroes");
+    const res = await axios.get("http://localhost:4000/superheroes1");
     console.log({axiosRes: res});
     return res.data;
   };
 
   // NOTE: `refetch` used along with `useQueryConfig.enabled` to fetch data onClick
-  const { data, isLoading, isError, error, isFetching } = useQuery(
-    "rqsuperheroes",
+  const { data, isLoading, isError, error, isFetching, refetch } = useQuery(
+    "rqsuperheroesV1",
     fetchRqsuperheros,
     useQueryConfig
   );
@@ -59,6 +62,9 @@ export default function rqsuperheroes() {
   return (
     <div>
       <Text fontSize="3xl">RQSuperheroes Page</Text>
+      <Button className={styles.button} onClick={refetch}>
+        Fetch Heros
+      </Button>
       {data &&
         data?.map((ind) => (
           <p key={ind.id}>

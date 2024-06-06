@@ -23,6 +23,11 @@ export default function Navbar({children}) {
         </ul>
         <ul>
           <li>
+            <Link href="/rqsuperheroes/v1">RQSuperheroesV1</Link>
+          </li>
+        </ul>
+        <ul>
+          <li>
             <Link href="/randomimages">RandomImages</Link>
           </li>
         </ul>
