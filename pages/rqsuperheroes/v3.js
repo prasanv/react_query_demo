@@ -1,33 +1,30 @@
-// NOTE: `useQueryConfig.refetchInterval` used for polling data = `milliseconds | true | false`
+// NOTE: Transform default data returned by query function
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
 import { Text } from "@chakra-ui/react";
 import { useQuery } from "react-query";
 import axios from "axios";
-import Link from "next/link";
 
-export default function rqsuperheroesV1() {
+export default function rqsuperheroesV3() {
   const [refetchinterval, setRefetchinterval] = useState(false);
 
   const onSuccess = (data) => {
     console.log("Query was success = ", {data});
-    if (data.length > 3) {
-      setRefetchinterval(6000);
-    }
   };
 
   const onError = (error) => {
     console.log("query has errored = ", {error});
-    if (error) {
-      setRefetchinterval(3000);
-    }
   };
 
   const useQueryConfig = {
     onSuccess,
     onError,
-    // NOTE: `useQueryConfig.refetchInterval` used for polling data = `milliseconds | true | false`
-    refetchInterval: refetchinterval,
+    // NOTE: Transform default data returned by query function
+    select: (data) => {
+      const updatedData = data.map(item => `${item.name} - ${item.alterEgo}`)
+      // console.log(updatedData);
+      return updatedData
+    }
   };
 
   const fetchRqsuperheros = async () => {
@@ -37,7 +34,7 @@ export default function rqsuperheroesV1() {
   };
 
   const { data, isLoading, isError, error, isFetching } = useQuery(
-    "rqsuperheroesV1",
+    "rqsuperheroesV3",
     fetchRqsuperheros,
     useQueryConfig
   );
@@ -56,9 +53,9 @@ export default function rqsuperheroesV1() {
     <div>
       <Text fontSize="3xl">RQSuperheroes Page</Text>
       {data &&
-        data?.map((ind) => (
-          <p key={ind.id}>
-            <Link href={`/rqsuperheroes/${ind.id}`}>{ind.name}</Link>
+        data?.map((item, index) => (
+          <p key={index}>
+            {item}
           </p>
         ))}
     </div>

@@ -18,12 +18,22 @@ export default function Navbar({children}) {
         </ul>
         <ul>
           <li>
-            <Link href="/rqsuperheroes">RQSuperheroes</Link>
+            <Link href="/rqsuperheroes">ReactQuerySuperheroes(RQS)</Link>
           </li>
         </ul>
         <ul>
           <li>
-            <Link href="/rqsuperheroes/v1">RQSuperheroesV1</Link>
+            <Link href="/rqsuperheroes/v1">RQS-V1</Link>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <Link href="/rqsuperheroes/v2">RQS-V2</Link>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <Link href="/rqsuperheroes/v3">RQS-V3</Link>
           </li>
         </ul>
         <ul>
