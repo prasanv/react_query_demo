@@ -15,7 +15,7 @@ export default function rqsuperheroes() {
 
   const fetchRqsuperheros = async () => {
     const res = await axios.get("http://localhost:4000/superheroes");
-    console.log({ axiosRes: res });
+    // console.log({ axiosRes: res });
     return res.data;
   };
 

@@ -19,6 +19,9 @@ export default function mutationsOptimisticUpdates() {
 
   const result = getSuperHeroes();
 
+  // NOTE: Update the state before performing the mutation under the assumption that nothing to go wrong
+  // You need to take into account that the mutation can go wrong here
+  // Throttle network to see the difference
   const mutateResult = addOptimisticSuperHeroes();
 
   const submitHandler = () => {

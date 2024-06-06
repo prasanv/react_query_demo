@@ -19,6 +19,8 @@ export default function mutationsResponseData() {
 
   const result = getSuperHeroes();
 
+  // NOTE: Rather than making a network call to refetch the queryKey,
+  // we can use `queryClient.setQueryData` to update the query cache with the mutation ResponseData
   const mutateResult = addSuperHeroesFromMutationResponse();
 
   const submitHandler = () => {
