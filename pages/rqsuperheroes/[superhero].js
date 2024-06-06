@@ -7,7 +7,7 @@ import { useSuperHeroData } from "../../customHooks/useSuperHeroData";
 export default function rqsuperhero() {
   const router = useRouter();
   const id = router.query?.superhero;
-  console.log({ router });
+  // console.log({ router });
 
   const { data, isLoading } = useSuperHeroData(["rqsuperhero", id]);
 

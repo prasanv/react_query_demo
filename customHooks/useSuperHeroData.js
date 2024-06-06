@@ -12,7 +12,7 @@ export const useSuperHeroData = (queryDetails) => {
   const queryClient = new useQueryClient();
 
   return useQuery([rqsuperhero, id], fetchData, {
-    // NOTE: need to look into `queryClient.initialData`
+    // NOTE: Data will used fetchData gets resolved `queryClient.initialData`
     initialData: () => {
       const hero = queryClient
         .getQueryData("rqsuperheroes")
