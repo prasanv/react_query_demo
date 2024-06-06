@@ -9,7 +9,7 @@ import styles from "../../styles/Home.module.css";
 export default function rqsuperheroesV2() {
 
   const useQueryConfig = {
-    // NOTE: `useQueryConfig.enabled` used for disabling fetch on mount,
+    // NOTE: `useQueryConfig.enabled` used for disabling fetch on mount, until its set to true it will not fetch the data
     enabled: false, // fetch on mount
   };
 

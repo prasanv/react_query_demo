@@ -13,6 +13,7 @@ export const useSuperHeroData = (queryDetails) => {
 
   return useQuery([rqsuperhero, id], fetchData, {
     // NOTE: Data will used fetchData gets resolved `queryClient.initialData`
+    // throttle the network speed to view the initial data fetch 
     initialData: () => {
       const hero = queryClient
         .getQueryData("rqsuperheroes")
