@@ -92,6 +92,14 @@
     {
       "id": 8,
       "label": "purple"
+    },
+    {
+      "id": 9,
+      "label": "orange"
+    },
+    {
+      "id": 10,
+      "label": "grey"
     }
   ]
 }
