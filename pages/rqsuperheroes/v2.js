@@ -1,4 +1,3 @@
-// NOTE: `useQueryConfig.enabled` used for disabling fetch on mount,
 /* eslint-disable react-hooks/rules-of-hooks */
 import React from "react";
 import { Button, Text } from "@chakra-ui/react";
@@ -39,7 +38,7 @@ export default function rqsuperheroesV2() {
 
   return (
     <div>
-      <Text fontSize="3xl">RQSuperheroes Page</Text>
+      <Text fontSize="3xl">RQSuperheroes - useQueryConfig.enabled</Text>
       <Button className={styles.button} onClick={refetch}>
         Fetch Heros
       </Button>

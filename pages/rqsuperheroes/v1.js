@@ -1,4 +1,3 @@
-// NOTE: `useQueryConfig.refetchInterval` used for polling data = `milliseconds | true | false`
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
 import { Text } from "@chakra-ui/react";
@@ -54,7 +53,7 @@ export default function rqsuperheroesV1() {
 
   return (
     <div>
-      <Text fontSize="3xl">RQSuperheroes Page</Text>
+      <Text fontSize="3xl">RQSuperheroes - useQueryConfig.refetchInterval</Text>
       {data &&
         data?.map((ind) => (
           <p key={ind.id}>

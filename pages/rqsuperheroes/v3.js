@@ -1,4 +1,3 @@
-// NOTE: Transform default data returned by query function
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
 import { Text } from "@chakra-ui/react";
@@ -51,7 +50,7 @@ export default function rqsuperheroesV3() {
 
   return (
     <div>
-      <Text fontSize="3xl">RQSuperheroes Page</Text>
+      <Text fontSize="3xl">RQSuperheroes - useQueryConfig.select</Text>
       {data &&
         data?.map((item, index) => (
           <p key={index}>
